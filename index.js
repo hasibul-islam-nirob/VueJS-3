@@ -1,23 +1,29 @@
-var App = Vue.createApp({
-
-    data(){
+var app = Vue.createApp({
+    data() {
         return {
-           count:0
+            name: ""
         };
     },
 
     methods: {
-        inc(){
-            this.count++;
+        handleKeyup(e) {
+            this.name = e.target.value;
         },
-        dec(){
-            this.count--;
-            if (this.count < 0){
-                this.count = 0;
-            }
+
+        handleFormSubmit() {
+            console.log("Form submitted!");
+        },
+
+        handleCardClick(e) {
+            console.log(e);
+            console.log("Card clicked!");
+        },
+
+        handleViewClick(e) {
+            console.log(e);
+            console.log("View clicked!");
         }
     }
-
 });
 
-App.mount("#App");
+app.mount("#app");
