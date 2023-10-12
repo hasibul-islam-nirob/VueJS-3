@@ -4,6 +4,7 @@ var App = Vue.createApp({
         return {
             msg : "Vue JS",
             gitLink:'https://github.com/hasibul-islam-nirob',
+            htmlCode: '<a href="https://github.com/hasibul-islam-nirob" target="_blank">Click Hear</a>'
         };
     }
 
