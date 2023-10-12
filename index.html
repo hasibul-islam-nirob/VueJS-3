@@ -12,8 +12,11 @@
 
         <h3>{{count}}</h3>
 
-        <button v-on:click="inc" type="button" class="btn btn-primary mx-2">+</button>
-        <button v-on:click="dec" type="button" class="btn btn-primary mx-2">-</button>
+        <button @click="inc" type="button" class="btn btn-primary mx-2">+</button>
+        <button @click="dec" type="button" class="btn btn-primary mx-2">-</button>
+
+<!--        <button v-on:click="inc" type="button" class="btn btn-primary mx-2">+</button>-->
+<!--        <button v-on:click="dec" type="button" class="btn btn-primary mx-2">-</button>-->
 
     </div>
 
