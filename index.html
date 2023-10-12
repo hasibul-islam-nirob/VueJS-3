@@ -9,11 +9,12 @@
 <body class="d-flex justify-content-center my-5 p-5">
 
     <div id="App">
-        <h3>Welcome to {{msg}}</h3>
-        <h5>Goto my git profile: <spam><a v-bind:href="gitLink" target="_blank">Click Hear</a> </spam> </h5>
-        <h5>Goto my git profile: <spam><a :href="gitLink" target="_blank">Click Hear</a> </spam> </h5>
 
-        <p >HTML Code Bind <span v-html="htmlCode"></span></p>
+        <h3>{{count}}</h3>
+
+        <button v-on:click="inc" type="button" class="btn btn-primary mx-2">+</button>
+        <button v-on:click="dec" type="button" class="btn btn-primary mx-2">-</button>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

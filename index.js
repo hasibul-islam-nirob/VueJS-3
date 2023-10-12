@@ -2,10 +2,20 @@ var App = Vue.createApp({
 
     data(){
         return {
-            msg : "Vue JS",
-            gitLink:'https://github.com/hasibul-islam-nirob',
-            htmlCode: '<a href="https://github.com/hasibul-islam-nirob" target="_blank">Click Hear</a>'
+           count:0
         };
+    },
+
+    methods: {
+        inc(){
+            this.count++;
+        },
+        dec(){
+            this.count--;
+            if (this.count < 0){
+                this.count = 0;
+            }
+        }
     }
 
 });
