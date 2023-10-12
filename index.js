@@ -2,7 +2,8 @@ var App = Vue.createApp({
 
     data(){
         return {
-            msg : "Vue Initial"
+            msg : "Vue JS",
+            gitLink:'https://github.com/hasibul-islam-nirob',
         };
     }
 
