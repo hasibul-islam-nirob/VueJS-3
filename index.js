@@ -1,11 +1,29 @@
-var App = Vue.createApp({
-
-    data(){
+var app = Vue.createApp({
+    data() {
         return {
-            msg : "Vue Initial"
+            num: "",
+            result: ""
         };
-    }
+    },
 
+    methods: {
+        getDouble() {
+            this.result = this.num * 2;
+        },
+
+        getSquare() {
+            this.result = this.num * this.num;
+        },
+
+        addTen() {
+            this.result = this.num + 10;
+        },
+
+        reset() {
+            this.num = "";
+            this.result = "";
+        }
+    }
 });
 
-App.mount("#App");
+app.mount("#app");

@@ -4,13 +4,27 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
 </head>
-<body>
+<body class="d-flex justify-content-center my-5 p-5">
 
-    <div id="App">
-        <h3>{{msg}}</h3>
-    </div>
+<div id="app">
+    <h3>Enter a number</h3>
+    <input v-model.number="num" type="text" />
+    <br />
+    <button @click="getDouble">Get Double</button>
+    <button @click="getSquare">Get Square</button>
+    <button @click="addTen">Add 10</button>
 
-<script src="index.js"></script>
+    <button @click="reset">Reset</button>
+    <hr />
+
+    <label>Entered Number: </label> {{ num }}
+    <br />
+    <label>Result:</label> {{ result }}
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
