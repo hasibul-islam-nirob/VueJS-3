@@ -1,27 +1,27 @@
 var app = Vue.createApp({
     data() {
         return {
-            name: ""
+            num: "",
+            result: ""
         };
     },
 
     methods: {
-        handleKeyup(e) {
-            this.name = e.target.value;
+        getDouble() {
+            this.result = this.num * 2;
         },
 
-        handleFormSubmit() {
-            console.log("Form submitted!");
+        getSquare() {
+            this.result = this.num * this.num;
         },
 
-        handleCardClick(e) {
-            console.log(e);
-            console.log("Card clicked!");
+        addTen() {
+            this.result = this.num + 10;
         },
 
-        handleViewClick(e) {
-            console.log(e);
-            console.log("View clicked!");
+        reset() {
+            this.num = "";
+            this.result = "";
         }
     }
 });
