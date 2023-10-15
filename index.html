@@ -11,7 +11,7 @@
 
     <div id="app">
         <h3>Skills</h3>
-        <input type="text" v-model="newSkill.name" />
+        <input type="text" v-model="newSkill" />
         <button @click="addSkill">Add</button>
         <ul>
             <li v-for="(skill, i) in skills" @click="removeSkill(i)">
