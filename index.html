@@ -10,9 +10,14 @@
 <body class="d-flex justify-content-center my-5 p-5">
 
     <div id="app">
-      <ul>
-        <li v-for="skill in skills">{{skill}}</li>
-      </ul>
+        <h3>Skills</h3>
+        <input type="text" v-model="newSkill.name" />
+        <button @click="addSkill">Add</button>
+        <ul>
+            <li v-for="(skill, i) in skills" @click="removeSkill(i)">
+                {{i + 1}}. {{ skill.name }} ({{ skill.experience }})
+            </li>
+        </ul>
     </div>
 
 
