@@ -10,12 +10,9 @@
 <body class="d-flex justify-content-center my-5 p-5">
 
     <div id="app">
-        <input type="text" v-model="textColor" /> <br />
-        <input type="text" v-model="bgColor" />
-        <input type="color" v-model="bgColor" />
-        <div class="card" :style="{backgroundColor: bgColor, color: textColor}">
-            Card
-        </div>
+      <ul>
+        <li v-for="skill in skills">{{skill}}</li>
+      </ul>
     </div>
 
 
