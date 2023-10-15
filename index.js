@@ -1,44 +1,37 @@
 var app = Vue.createApp({
     data() {
         return {
-            review: "",
-            show: false,
-            skills: [
-                { name: "HTML", experience: 5 },
-                { name: "CSS", experience: 10 },
-                { name: "JS", experience: 5 },
-                { name: "Java", experience: 4 },
-                { name: "php", experience: 15 },
-                { name: "node js", experience: 15 },
-                { name: "python", experience: 2 },
-                { name: "go", experience: 1 }
-            ]
+            mobile: "",
+            name: {
+                firstName: "",
+                lastName: ""
+            }
         };
     },
 
-    computed: {
-        totalCount1() {
-            console.log("Count from computed property");
-            return this.skills.length;
+    watch: {
+        mobile(newValue, oldValue) {
+            console.log(newValue);
+
+            if (isNaN(newValue)) {
+                alert("Enter valid mobile number");
+                this.mobile = oldValue;
+            }
+
+            if (newValue.length == 11) {
+                alert("An OTP has been sent");
+            }
         },
 
-        experiencedSkills() {
-            let es = this.skills.filter((item) => {
-                return item.experience >= 10;
-            });
+        // "name.firstName": function (newValue, oldValue) {
+        //   console.log(newValue, oldValue);
+        // },
 
-            return es;
-        }
-    },
-
-    methods: {
-        removeSkill(i) {
-            this.skills.splice(i, 1);
-        },
-
-        totalCount() {
-            console.log("Count from method");
-            return this.skills.length;
+        name: {
+            deep: true,
+            handler: function (newValue, oldValue) {
+                console.log(newValue);
+            }
         }
     }
 });

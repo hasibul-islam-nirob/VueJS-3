@@ -23,31 +23,24 @@
 <body class="d-flex justify-content-center my-5 p-5">
 
     <div id="app">
-        <input type="text" placeholder="Write your review" v-model="review" />
+        <input
+                type="text"
+                v-model="mobile"
+                placeholder="Enter 11 digit mobile number"
+        />
+        <br />
 
-        <h3>Skills</h3>
-        <ul>
-            <li
-                    v-for="(skill, i) in skills"
-                    :key="skill.name"
-                    @click="removeSkill(i)"
-            >
-                <p>{{ skill.name }} - {{ skill.experience }}</p>
-            </li>
-        </ul>
+        <input
+                type="text"
+                v-model="name.firstName"
+                placeholder="Enter first name"
+        />
 
-        <h3>Total: {{totalCount1}}</h3>
-
-        <h3>Experienced Skills</h3>
-        <ul>
-            <li
-                    v-for="(skill, i) in experiencedSkills"
-                    :key="skill.name"
-                    @click="removeSkill(i)"
-            >
-                <p>{{ skill.name }} - {{ skill.experience }}</p>
-            </li>
-        </ul>
+        <input
+                type="text"
+                v-model="name.lastName"
+                placeholder="Enter last name"
+        />
     </div>
 
 
