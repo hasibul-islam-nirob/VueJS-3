@@ -1,6 +1,7 @@
 var app = Vue.createApp({
     data() {
         return {
+            review: "",
             show: false,
             skills: [
                 { name: "HTML", experience: 5 },
@@ -15,9 +16,29 @@ var app = Vue.createApp({
         };
     },
 
+    computed: {
+        totalCount1() {
+            console.log("Count from computed property");
+            return this.skills.length;
+        },
+
+        experiencedSkills() {
+            let es = this.skills.filter((item) => {
+                return item.experience >= 10;
+            });
+
+            return es;
+        }
+    },
+
     methods: {
-        toggle() {
-            this.show = !this.show;
+        removeSkill(i) {
+            this.skills.splice(i, 1);
+        },
+
+        totalCount() {
+            console.log("Count from method");
+            return this.skills.length;
         }
     }
 });

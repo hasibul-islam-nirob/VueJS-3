@@ -22,18 +22,33 @@
 </head>
 <body class="d-flex justify-content-center my-5 p-5">
 
-<div id="app">
-    <ul>
-        <li v-for="(skill, i) in skills" :key="skill.name">
-            <p>
-                {{i + 1}}. {{ skill.name }} -
-                <span v-if="skill.experience < 4">Beginner</span>
-                <span v-else-if="skill.experience < 6">Proficient</span>
-                <span v-else>Expert</span>
-            </p>
-        </li>
-    </ul>
-</div>
+    <div id="app">
+        <input type="text" placeholder="Write your review" v-model="review" />
+
+        <h3>Skills</h3>
+        <ul>
+            <li
+                    v-for="(skill, i) in skills"
+                    :key="skill.name"
+                    @click="removeSkill(i)"
+            >
+                <p>{{ skill.name }} - {{ skill.experience }}</p>
+            </li>
+        </ul>
+
+        <h3>Total: {{totalCount1}}</h3>
+
+        <h3>Experienced Skills</h3>
+        <ul>
+            <li
+                    v-for="(skill, i) in experiencedSkills"
+                    :key="skill.name"
+                    @click="removeSkill(i)"
+            >
+                <p>{{ skill.name }} - {{ skill.experience }}</p>
+            </li>
+        </ul>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
