@@ -6,26 +6,44 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
 
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid gray;
+            padding: 5px;
+        }
+    </style>
+
 </head>
 <body class="d-flex justify-content-center my-5 p-5">
 
     <div id="app">
+        <h3>About Me</h3>
+        <table>
+            <tr v-for="(value, key, i) in aboutMe">
+                <th>{{i + 1}}</th>
+                <th>{{key}}</th>
+                <td>{{value}}</td>
+            </tr>
+        </table>
+
         <h3>Skills</h3>
-        <input type="text" v-model="newSkill.name" />
-        <button @click="addSkill">Add</button>
-        <ul>
-            <li
-                    v-for="(skill, i) in skills"
-                    @click="removeSkill(i)"
-                    :key="skill.name"
-            >
-                <p>
-                    {{i + 1}}. {{ skill.name }} ({{ skill.experience }})
-                    <br />
-                    <input type="text" placeholder="remark" @click.stop />
-                </p>
-            </li>
-        </ul>
+
+        <p>
+            <template v-for="skill in skills" :key="skill.name">
+                {{ skill.name }},
+            </template>
+        </p>
+        <br />
+
+<!--        <div>-->
+<!--            <p v-for="i in 100">{{ i }}</p>-->
+<!--        </div>-->
     </div>
 
 
