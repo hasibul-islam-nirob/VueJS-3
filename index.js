@@ -1,21 +1,25 @@
 var app = Vue.createApp({
     data() {
         return {
-            aboutMe: {
-                name: "Hasibul Islam",
-                nickName: "Nirob",
-                website: "https://hinirob.com"
-            },
-
+            show: false,
             skills: [
                 { name: "HTML", experience: 5 },
                 { name: "CSS", experience: 10 },
-                { name: "JS", experience: 15 }
+                { name: "JS", experience: 5 },
+                { name: "Java", experience: 4 },
+                { name: "php", experience: 15 },
+                { name: "node js", experience: 15 },
+                { name: "python", experience: 2 },
+                { name: "go", experience: 1 }
             ]
         };
     },
 
-    methods: {}
+    methods: {
+        toggle() {
+            this.show = !this.show;
+        }
+    }
 });
 
 app.mount("#app");
