@@ -11,11 +11,19 @@
 
     <div id="app">
         <h3>Skills</h3>
-        <input type="text" v-model="newSkill" />
+        <input type="text" v-model="newSkill.name" />
         <button @click="addSkill">Add</button>
         <ul>
-            <li v-for="(skill, i) in skills" @click="removeSkill(i)">
-                {{i + 1}}. {{ skill.name }} ({{ skill.experience }})
+            <li
+                    v-for="(skill, i) in skills"
+                    @click="removeSkill(i)"
+                    :key="skill.name"
+            >
+                <p>
+                    {{i + 1}}. {{ skill.name }} ({{ skill.experience }})
+                    <br />
+                    <input type="text" placeholder="remark" @click.stop />
+                </p>
             </li>
         </ul>
     </div>
