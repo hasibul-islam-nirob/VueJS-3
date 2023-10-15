@@ -23,28 +23,18 @@
 <body class="d-flex justify-content-center my-5 p-5">
 
     <div id="app">
-        <input
-                type="text"
-                v-model="mobile"
-                placeholder="Enter 11 digit mobile number"
-        />
+        <input type="text" v-model="firstName" placeholder="Enter first name" />
+        <input type="text" v-model="lastName" placeholder="Enter last name" />
         <br />
 
-        <input
-                type="text"
-                v-model="name.firstName"
-                placeholder="Enter first name"
-        />
-
-        <input
-                type="text"
-                v-model="name.lastName"
-                placeholder="Enter last name"
-        />
+<!--        <p>Your Full Name is: {{fullName}}</p>-->
+<!--        <p>Your Full Name is: {{fullName()}}</p>-->
+        <p>Your Full Name is: {{fullName}}</p>
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
